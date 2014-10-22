@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+p,table,span,div,html,body,ul,li,a,img,h4,input{ margin:0px; padding:0px; font-family:"Microsoft Yahei",'Helvetica Neue',Helvetica,Arial,sans-serif,"Î¢ÈíÑÅºÚ", "ËÎÌå"; font-size:12px;text-shadow:0 1px 1px rgba(0,0,0,.1)}
+li,a{ text-decoration:none; color:#fff}
+a.skyblue{color:#03BDFC}
+body{ background: url(/images/bodybg.jpg) repeat-x #f5f5f5}
+ul{ list-style:none; }
+.float{ float:left}
+img{ border:0px;  }
+.hand{ cursor:pointer; _cursor:hand}
+
+.banner{ position:relative; height:540px; top:-14px; text-align:center; background:url(../images/index-03.jpg) no-repeat center 0; }
+.classBanner{position:relative; height:614px; top:-14px; background:url(../images/about.jpg) no-repeat center 0;}
+.bannerWrap{ width:1000px; overflow:auto; margin:0 auto; position:relative; top:-70px; z-index:3;}
+.bannerWrap ul.showList{ margin:0 auto; float:right  }
+.bannerWrap ul.showList li{ width:23px; height:23px; background:url(../images/circle1.png) no-repeat; margin:5px; float:left; color:#fff; padding-top:3px; text-align:center;  }
+.bannerWrap ul.showList li.special{ background:url(../images/circle2.png) no-repeat; color:#048fd5}
