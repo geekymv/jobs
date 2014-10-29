@@ -37,9 +37,6 @@ public class LoginSuccessAction extends ActionSupport implements SessionAware{
 			Student student = (Student)user;
 			
 			session.put("student", student);
-			
-			System.out.println("student....");
-			
 			return "student";
 			
 		}else if (user instanceof Employer){
@@ -47,8 +44,6 @@ public class LoginSuccessAction extends ActionSupport implements SessionAware{
 			Employer employer = (Employer)user;
 			
 			session.put("employer", employer);
-			
-			System.out.println("employer....");
 			
 			Integer authority = employer.getAuthority();
 			
@@ -71,9 +66,6 @@ public class LoginSuccessAction extends ActionSupport implements SessionAware{
 	
 	@Override
 	public void setSession(Map<String, Object> session) {
-		
-		System.out.println("session = " + session.getClass());
-		
 		this.session = session;
 	}
 

@@ -20,14 +20,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			height:51px;
 		}
 		
+		
 		.footer {
 			background-color:  #333;
 			width: 100%;
 			height: 165px;
-			
-			margin-top: 250px;
+			margin-top: 450px;
 		}
-		
 	</style>
 	
 	<link href="css/zzsc.css" rel="stylesheet" type="text/css" />

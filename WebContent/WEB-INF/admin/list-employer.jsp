@@ -41,7 +41,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
    	<![endif]-->
-	
 	</head>
 
 <body>
@@ -60,11 +59,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<div class="col-md-10">
 	        <div class="panel panel-primary">
 	          <div class="panel-heading">用工单位列表</div>
+	          
+	          <div class="panel-body">
+			    <button id="search" class="btn btn-default">查询用工单位</button>
+			  </div>
 	        
 		      <s:if test="#request.employers == null || #request.employers.size() == 0">
 	            	没有用工单位！
 	          </s:if>	
-	        
 	          <s:else>
 	          <!-- Table -->
 	          <table class="table table-bordered table-hover table-condensed">
@@ -91,22 +93,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  							${remarks }
 		  						</s:else>
 		  					</td>
-		  					
 		  					<td><a href="admin/update-emp-preupdateEmployer?empId=${id }">修改</a></td>
-		  					
             			</tr>
             		</s:iterator>
-	            	
 	            </tbody>
-	          
 	          </table>
-
 	         </s:else>
-	         
-	         
 	        </div> <!-- end of panel -->
-	      
     	</div>
+    	
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">查询用工单位</h4>
+		      </div>
+		      <div class="modal-body">
+		        <h1>helloworld</h1>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn btn-primary">查询</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>  	
       
 	</div>
     
@@ -117,9 +130,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <jsp:include page="../main/footer.jsp"></jsp:include>
    </div>
 
-
-
-<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$("#search").click(function() {
+			$("#myModal").modal("show");
+		});	
+	
+	</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

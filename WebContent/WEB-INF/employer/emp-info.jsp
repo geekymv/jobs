@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width: 100%;
 			height: 165px;
 			
-			margin-top: 200px;
+			margin-top: 450px;
 		}
 		.col-md-10 ul li {
 			line-height: 40px;
