@@ -50,14 +50,14 @@ public class PayoffAction extends ActionSupport implements SessionAware {
 				&& worktimes.size() == salarys.size() && salarys.size() == toolfees.size() 
 				&& toolfees.size() == bonus.size() && bonus.size() == remarks.size()) {
 		
-			System.out.println("month = " + month);
-			System.out.println(stuIds);
-			System.out.println(empIds);
-			System.out.println("worktimes = " + worktimes);
-			System.out.println("salary = " + salarys);
-			System.out.println("toolfees = " + toolfees);
-			System.out.println("bonus = " + bonus);
-			System.out.println("remarks = " + remarks);
+//			System.out.println("month = " + month);
+//			System.out.println(stuIds);
+//			System.out.println(empIds);
+//			System.out.println("worktimes = " + worktimes);
+//			System.out.println("salary = " + salarys);
+//			System.out.println("toolfees = " + toolfees);
+//			System.out.println("bonus = " + bonus);
+//			System.out.println("remarks = " + remarks);
 
 			salaryService.add(stuIds, empIds, worktimes, salarys, toolfees, bonus, remarks, month);
 		

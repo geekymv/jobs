@@ -48,16 +48,6 @@ public class SalaryAction extends ActionSupport implements RequestAware, Session
 		
 		return "listSalary";
 	}
-	
-//	/**
-//	 * 修改学生的薪水：只可以当天修改
-//	 * @return
-//	 * @throws Exception
-//	 */
-//	public String update() throws Exception {
-//		
-//		return "update";
-//	}
 
 	private Map<String, Object> session;
 	@Override
@@ -87,7 +77,4 @@ public class SalaryAction extends ActionSupport implements RequestAware, Session
 	public void setSalary(Salary salary) {
 		this.salary = salary;
 	}
-
-	
-
 }

@@ -135,7 +135,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		
 		$("#submit").click(function(){
 			if($("#datepicker").val().trim() == ''){
 				alert("请选择工资的年月！");
