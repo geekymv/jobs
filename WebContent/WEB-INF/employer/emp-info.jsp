@@ -25,18 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width: 100%;
 			height: 165px;
 			
-			margin-top: 450px;
-		}
-		.col-md-10 ul li {
-			line-height: 40px;
-		}
-		
-		.col-md-10 ul li input {
-			line-height: 25px;
-		}
-		
-		.emp_info {
-			margin-left: 350px;
+			margin-top: 250px;
 		}
 		
 	</style>
@@ -65,40 +54,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<div class="col-md-10">
       		<div class="panel panel-primary">
 	          <div class="panel-heading">我的资料</div>
-	     	  <div class="emp_info">
-	     	  	<form action="employer/update-updateEmployer.do" method="post" class="form-horizontal" role="form">
-	        		<label class="col-sm-3">账号：</label>${employer.account}
-	        		<div  class="col-sm-9">
-	        			<input type="hidden" class="form-control" name="empId" value="${employer.id }"/>
+	     	  	<form action="employer/update-updateEmployer.do" method="post" 
+	     	  	class="form-horizontal" role="form" >
+	     	  		<div class="form-group">
+		        		<label class="col-md-3 control-label">账号：</label>
+		        		<div  class="col-md-3">
+		        			${employer.account}
+		        			<input type="hidden" class="form-control" name="empId" value="${employer.id }"/>
+		        		</div>
 	        		</div>
-	        		
-	        		
-	        		<label for="name" class="col-md-3">名称：</label>
-	        		<div class="col-md-9">
-	        			<input type="text" class="form-control" id="name" name="name" value="${employer.name}"/>
+	        		<div class="form-group">
+		        		<label for="name" class="col-md-3 control-label">名称：</label>
+		        		<div class="col-md-3">
+		        			<input type="text" class="form-control" id="name" name="name" value="${employer.name}"/>
+		        		</div>
 	        		</div>
-	        		
-	        		<label for="name" class="col-md-3">电话号码：</label>
-	        		<div class="col-md-9">
-	        			<input type="text" class="form-control" name="mobile" value="${employer.mobile}"/>
+	        		<div class="form-group">
+		        		<label for="name" class="col-md-3 control-label">电话号码：</label>
+		        		<div class="col-md-3">
+		        			<input type="text" class="form-control" name="mobile" value="${employer.mobile}"/>
+		        		</div>
 	        		</div>
-	        		
-	        		<label for=""></label>
-	        	负责老师：<input type="text" class="form-control" name="teacher" value="${employer.teacher}"/>
-	      
-	        		总岗位数：${employer.postNum }
-	        
-	        		月总金额：${employer.totalMoney }
-	       
-	        	备注：
-	        		<textarea class="form-control" name="employer.remarks" >${employer.remarks }</textarea>
-	       
-	         
-		          
-		          <input type="submit" value="保存修改"/>
+	        		<div class="form-group">
+		        		<label for="teacher" class="col-md-3 control-label">负责老师：</label>
+		        		<div class="col-md-3">
+		        			<input type="text" class="form-control" id="teacher" name="teacher" value="${employer.teacher}"/>
+		      			</div>
+	      			</div>
+	      			<div class="form-group">
+		      			<label class="col-md-3 control-label">总岗位数：</label>
+		      			<div class="col-md-3">
+		        			${employer.postNum }
+		        		</div>
+	        		</div>
+	        		<div class="form-group">
+		        		<label class="col-md-3 control-label">月总金额：</label>
+		      			<div class="col-md-3">
+		        			${employer.totalMoney }
+		        		</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">备注：</label>	       
+		        		<div class="col-md-3">
+			        		<textarea class="form-control" name="remarks">${employer.remarks }</textarea>	
+		        		</div>
+	        		</div>
+	        		<div class="form-group">
+			            <label class="col-md-3 control-label"></label>	
+			            <div class="col-md-7">
+			          	  <input type="submit" class="btn btn-primary" value="保存修改"/>
+			            </div>
+		         	</div>
 		          	
 		        </form>  
-	          </div>
 		    </div>
     	</div>
       

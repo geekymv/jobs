@@ -162,12 +162,11 @@
 			
 		<!-- 修改个人信息 -->
 		<action name="update-*" class="updateEmployerAction" method="{1}">
-			<result name="saveEmp" type="redirectAction">emp-empInfo</result>
+			<result name="saveEmp">/WEB-INF/employer/ok.jsp</result>
 			<!-- 跳转到修改密码的页面 -->
 			<result name="preUpdatePwd">/WEB-INF/employer/update-pwd.jsp</result>
 			<result name="updatePwd" type="redirect">/login.jsp</result>
 			<result name="input">/WEB-INF/employer/update-pwd.jsp</result>
-				
 		</action>
 
 		<action name="emp-*" class="employerAction" method="{1}">

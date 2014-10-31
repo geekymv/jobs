@@ -2,6 +2,7 @@ package com.heike.action.employer;
 
 import java.util.Map;
 
+import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -14,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Controller("updateEmployerAction")
 @Scope("prototype")
-public class UpdateEmployerAction extends ActionSupport implements SessionAware {
+public class UpdateEmployerAction extends ActionSupport implements SessionAware, RequestAware {
 	private static final long serialVersionUID = 3883596882240389686L;
 	
 	@Autowired
@@ -67,9 +68,7 @@ public class UpdateEmployerAction extends ActionSupport implements SessionAware 
 		Employer emp = (Employer) session.get("employer");
 
 		employer = employerService.queryEmployer(emp.getId());
-		
-		System.out.println("--------------------------------------------");
-		
+
 		if(null == password || "".equals(password.trim())){
 			this.addFieldError("password", "密码不能为空！");
 			return;
@@ -114,6 +113,9 @@ public class UpdateEmployerAction extends ActionSupport implements SessionAware 
 		
 		session.put("employer", employer);
 		
+		//跳转至操作成功提示页面
+		request.put("url", "employee/emp-empInfo.do");
+		
 		return "saveEmp";
 	}
 	
@@ -124,6 +126,13 @@ public class UpdateEmployerAction extends ActionSupport implements SessionAware 
 		this.session = session;
 	}
 
+	private Map<String, Object> request;
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		// TODO Auto-generated method stub
+		this.request = request;
+	}
+	
 	public Employer getEmployer() {
 		return employer;
 	}
@@ -178,6 +187,7 @@ public class UpdateEmployerAction extends ActionSupport implements SessionAware 
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
 	}
+	
 	
 	
 }

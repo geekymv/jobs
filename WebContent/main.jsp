@@ -117,7 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	
       		<pre>右边</pre>
       		<img src="img/hello.jpg" alt="这是一张图片" title="这是一张图片吗" class="img-thumbnail">
-
+			<%-- 
          	<div class="btn-group">
 			  <button type="button" class="btn btn-success">Action</button>
 			  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
@@ -132,6 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <li><a href="#">Separated link</a></li>
 			  </ul>
 			</div>
+			 --%>
       </div>
     
       <div class="col-md-10">
