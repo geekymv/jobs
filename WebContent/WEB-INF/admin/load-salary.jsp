@@ -66,8 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	         	
 	         	选择年月:<input type="text" id="datepicker" size="10" name="month"/>
             			&nbsp;&nbsp;&nbsp;
-
-					<input type="submit" id="load" value="下载"/>
+					<input type="submit" class="btn btn-default" id="load" value="下载"/>
 	           </form>
 	        </div> <!-- end of panel -->
 	      

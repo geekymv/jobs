@@ -59,14 +59,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	     	  		<div class="form-group">
 		        		<label class="col-md-3 control-label">账号：</label>
 		        		<div  class="col-md-3">
-		        			${employer.account}
+		        			<input type="text" disabled="disabled" class="form-control" value="${employer.account}"/>
 		        			<input type="hidden" class="form-control" name="empId" value="${employer.id }"/>
 		        		</div>
 	        		</div>
 	        		<div class="form-group">
 		        		<label for="name" class="col-md-3 control-label">名称：</label>
 		        		<div class="col-md-3">
-		        			<input type="text" class="form-control" id="name" name="name" value="${employer.name}"/>
+		        			<input type="text" class="form-control" id="name" name="name" value="${employer.name}" autofocus="autofocus"/>
 		        		</div>
 	        		</div>
 	        		<div class="form-group">
@@ -84,13 +84,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	      			<div class="form-group">
 		      			<label class="col-md-3 control-label">总岗位数：</label>
 		      			<div class="col-md-3">
-		        			${employer.postNum }
+		      				<input type="text" disabled="disabled" class="form-control" value="${employer.postNum }"/>
 		        		</div>
 	        		</div>
 	        		<div class="form-group">
 		        		<label class="col-md-3 control-label">月总金额：</label>
 		      			<div class="col-md-3">
-		        			${employer.totalMoney }
+		      				<input type="text" disabled="disabled" class="form-control" value="${employer.totalMoney }"/>
 		        		</div>
 					</div>
 					<div class="form-group">
