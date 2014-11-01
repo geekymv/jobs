@@ -29,6 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		ul li {
 			line-height: 40px;
+			list-style-type: none;
 		}
 		ul li input {
 			line-height: 20px;
@@ -68,18 +69,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				 <form action="student/update.do" method="post">
 		     	 <ul>
 		        	<li>
-		        		学号：${student.number }
+		        		<label>学号：</label>${student.number }
 		        		<input type="hidden" name="student.number" value="${student.number}"/>
 		        		<input type="hidden" name="student.id" value="${student.id }"/>	
 		        		<input type="hidden" name="student.password" value="${student.password }"/>	
 		        	</li>
 		        	
 		        	<li>
-		        		姓名：
-		        		<input type="text" name="student.name" value="${student.name}"/>
+		        		<label for="name">姓名：</label>
+		        		<input type="text" id="name" name="student.name" value="${student.name}"/>
 		        	</li>
 		        	<li>
-		        		性别：
+		        		<label>性别：</label>
 		        		<s:if test='student.gender == "男"'>
 		        			<input type="radio" name="student.gender" value="男" checked="checked"/>男
 		        			<input type="radio" name="student.gender" value="女"/>女
@@ -90,39 +91,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        		</s:else>
 		        	</li>
 		        	<li>
-		        		学院：
-		        		<input type="text" class="input" name="student.college" value="${student.college }"/>
+		        		<label for="college">学院：</label>
+		        		<input type="text" class="input" id="college" name="student.college" value="${student.college }"/>
 		        	</li>
 		        	<li>
-		        		专业：
-		        		<input type="text" class="input" name="student.profession" value="${student.profession }"/>
+		        		<label for="profession">专业：</label>
+		        		<input type="text" class="input" id="profession" name="student.profession" value="${student.profession }"/>
 		        	</li>
 		        	
 		        	<li>
-		        		手机号码：
-		        		<input type="text" class="input" name="student.mobile" value="${student.mobile }"/>
+		        		<label for="mobile">手机号码：</label>
+		        		<input type="text" class="input" id="mobile" name="student.mobile" value="${student.mobile }"/>
 		        	</li>
 		        	
-		        	<li>自我介绍：<br />
+		        	<li><label>自我介绍：</label><br />
 		        		<s:if test="student.introduce == null">
 		        			<textarea rows="5" cols="40" name="student.introduce">
 		        				无！
 		        			</textarea>
 		        		</s:if>
 		        		<s:else>
-		        			<textarea rows="2" cols="40" name="student.introduce">
-		        				${student.introduce }
-		        			</textarea>
+		        			<textarea rows="2" cols="40" name="student.introduce">${student.introduce }</textarea>
 		        		</s:else>
 		        	</li>	
 		        	<li>
-		        		注册时间：
-		        		<s:date name="student.regTime" format="yyyy-MM-dd" />
+		        		<label>注册时间：</label>
+		        		<s:date name="student.regTime" format="yyyy年MM月dd日" />
 		        		<input type="hidden" name="student.regTime" value="${student.regTime }">
-		        		</li>
+		        	</li>
+		        	<li>
+		        		<input type="submit" class="btn btn-default" value="保存"/>
+		        	</li>
+		        	
 		        </ul>
-		        
-		        	<input type="submit" value="保存"/>
+		        		
 		        </form>
 		        
 		     </div>

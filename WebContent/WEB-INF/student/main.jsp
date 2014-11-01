@@ -24,8 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			background-color:  #333;
 			width: 100%;
 			height: 165px;
-			
-			margin-top: 200px;
+			margin-top: 400px;
 		}
 		
 	</style>
@@ -108,20 +107,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          	 	<s:if test="page+1 <= #totalPage">
 				  		<li><a href="student/stu-listRecruit.do?page=<s:property value=" page+1 "/>" >下一页</a></li>
 	          	 	</s:if>
-
 				</ul>
 	          </div>
 	         </s:else>
-	         
-	         
 	        </div> <!-- end of panel -->
-	      
     	</div>
-      
 	</div>
-    
    </div><!-- /.container -->
-   
    
    <div class="footer">
    	<jsp:include page="../main/footer.jsp"></jsp:include>
