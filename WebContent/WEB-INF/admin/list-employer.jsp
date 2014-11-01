@@ -104,18 +104,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-sm">
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		        <h4 class="modal-title" id="myModalLabel">查询用工单位</h4>
 		      </div>
 		      <div class="modal-body">
-		        <h1>helloworld</h1>
+					  <input type="text" name="account" class="form-control" placeholder="请输入用工单位账号" autofocus="autofocus" required="required"/>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		        <button type="button" class="btn btn-primary">查询</button>
+		        <button type="button" class="btn btn-primary" id="searchEmp">查询</button>
 		      </div>
 		    </div>
 		  </div>
@@ -135,6 +135,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#search").click(function() {
 			$("#myModal").modal("show");
 		});	
+		
+		$("#searchEmp").click(function() {
+			var account = $("input[name=account]").val();
+			window.location.href="admin/queryEmployer?account="+account;
+		});
 	
 	</script>
 

@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<div class="col-md-10">
 	        <div class="panel panel-primary">
 	          <div class="panel-heading">操作结果</div>
-		       <h1>操作成功，3秒后页面跳转.....</h1> 
+		       <h1>没有找到！3秒后返回.....</h1> 
 			    <%
 			    	String url = (String)request.getAttribute("url");
 					response.setHeader("Refresh", "3;url=" + url);

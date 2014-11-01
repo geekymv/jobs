@@ -103,70 +103,74 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="form-group">	
 					<label for="account" class="col-sm-2 control-label">登录账号</label>  
 					<div class="col-sm-3">
-					  <input type="text" class="form-control focus" value="${employer.account }" disabled="disabled">
-					  <input type="hidden" name="empId" value="${employer.id }" class="form-control"/>
+					  <input type="text" class="form-control focus" name="account" autofocus="autofocus" required="required" value="${emp.account }">
+					  <input type="hidden" name="empId" value="${emp.id }" class="form-control"/>
 					</div> 
+					<label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="account"></s:fielderror>
+					</label>
 			  	</div>
 			  	<div class="form-group">
-					    <label for="name" class="col-sm-2 control-label">单位名称</label>
-					    <div class="col-sm-3">
-					      <input type="text" class="form-control focus" value="${employer.name }" name="name" autofocus="autofocus" required="required">
-					    </div>
-					    <label class="control-label error-info">
-					    	<em>*</em>
-					    	<s:fielderror fieldName="name"></s:fielderror>
-					    </label>
+				    <label for="name" class="col-sm-2 control-label">单位名称</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control focus" value="${emp.name }" name="name" required="required">
+				    </div>
+				    <label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="name"></s:fielderror>
+				    </label>
 				</div>
 				<div class="form-group">
-					    <label for="mobile" class="col-sm-2 control-label">电话号码</label>
-					    <div class="col-sm-3">
-					      <input type="text" class="form-control focus" value="${employer.mobile }" name="mobile" required="required">
-					    </div>
-					    <label class="control-label error-info">
-					    	<em>*</em>
-					    	<s:fielderror fieldName="mobile"></s:fielderror>
-					    </label>
+				    <label for="mobile" class="col-sm-2 control-label">电话号码</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control focus" value="${emp.mobile }" name="mobile" required="required">
+				    </div>
+				    <label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="mobile"></s:fielderror>
+				    </label>
 				</div>
 				<div class="form-group">
-					    <label for="teacher" class="col-sm-2 control-label">负责老师</label>
-					    <div class="col-sm-3">
-					      <input type="text" class="form-control focus" value="${employer.teacher }" name="teacher" required="required"/>
-					    </div>
-					    <label class="control-label error-info">
-					    	<em>*</em>
-					    	<s:fielderror fieldName="teacher"></s:fielderror>
-					    </label>
+				    <label for="teacher" class="col-sm-2 control-label">负责老师</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control focus" value="${emp.teacher }" name="teacher" required="required"/>
+				    </div>
+				    <label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="teacher"></s:fielderror>
+				    </label>
 				</div>
 				<div class="form-group">
-					    <label for="postNum" class="col-sm-2 control-label">岗位数</label>
-					    <div class="col-sm-3">
-					      <input type="text" id="postNum" class="form-control focus" value="${employer.postNum }" name="postNum" />
-					    </div>
-					    <label class="control-label error-info">
-					    	<em>*</em>
-					    	<s:fielderror fieldName="postNum"></s:fielderror>
-					    </label>
+				    <label for="postNum" class="col-sm-2 control-label">岗位数</label>
+				    <div class="col-sm-3">
+				      <input type="text" id="postNum" class="form-control focus" value="${emp.postNum }" name="postNum" />
+				    </div>
+				    <label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="postNum"></s:fielderror>
+				    </label>
 				</div>
 			  	<div class="form-group">
-					    <label for="totalMoney" class="col-sm-2 control-label">月总金额(元)</label>
-					    <div class="col-sm-3">
-					      <input type="text" id="totalMoney" class="form-control focus" value="${employer.totalMoney }" name="totalMoney" />
-					    </div>
-					    <label class="control-label error-info">
-					    	<em>*</em>
-					    	<s:fielderror fieldName="totalMoney"></s:fielderror>
-					    </label>
+				    <label for="totalMoney" class="col-sm-2 control-label">月总金额(元)</label>
+				    <div class="col-sm-3">
+				      <input type="text" id="totalMoney" class="form-control focus" value="${emp.totalMoney }" name="totalMoney" />
+				    </div>
+				    <label class="control-label error-info">
+				    	<em>*</em>
+				    	<s:fielderror fieldName="totalMoney"></s:fielderror>
+				    </label>
 				</div>
 			  	<div class="form-group">
-					    <label for="remarks" class="col-sm-2 control-label">备注信息</label>
-					    <div class="col-sm-3">
-						    <textarea class="form-control" rows="4" name="remarks">${employer.remarks }</textarea>
-					    </div>
+				    <label for="remarks" class="col-sm-2 control-label">备注信息</label>
+				    <div class="col-sm-3">
+					    <textarea class="form-control" rows="4" name="remarks">${emp.remarks }</textarea>
+				    </div>
 				</div>
 			  	 <div class="form-group">
-					    <div class="col-sm-offset-2 col-sm-4">
-					      <button type="submit" class="btn btn-primary" onclick="return mycheck()">保存更新</button>
-					    </div>
+				    <div class="col-sm-offset-2 col-sm-4">
+				      <button type="submit" class="btn btn-primary" onclick="return mycheck()">保存更新</button>
+				    </div>
 				</div>
 	    	</form>
 	        </div>

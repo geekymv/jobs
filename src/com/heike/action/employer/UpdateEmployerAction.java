@@ -114,7 +114,7 @@ public class UpdateEmployerAction extends ActionSupport implements SessionAware,
 		session.put("employer", employer);
 		
 		//跳转至操作成功提示页面
-		request.put("url", "employee/emp-empInfo.do");
+		request.put("url", "employer/emp-empInfo.do");
 		
 		return "saveEmp";
 	}

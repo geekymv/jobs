@@ -196,15 +196,6 @@
 	
 	
 	<package name="admin" namespace="/admin" extends="struts-default">
-		
-		<!-- 跳转至添加二级用户页面 
-		<action name="pre-addemployer" class="adminAction" method="preAddEmployer">
-			
-			<result name="preAddEmployer">/WEB-INF/admin/add-employer.jsp</result>
-			<result name="error" type="redirect">/login.jsp</result>
-		</action>
-		-->
-		
 		<action name="admin-*" class="adminAction" method="{1}">
 			<!-- 跳转至添加二级用户页面 -->
 			<result name="preAddEmployer">/WEB-INF/admin/add-employer.jsp</result>
@@ -230,6 +221,16 @@
 			<result name="errInput">/WEB-INF/admin/update-emppwd.jsp</result>
 			
 			<result name="error" type="redirect">/login.jsp</result>
+		</action>
+		
+		<!-- 查询用工单位信息 -->
+		<action name="queryEmployer" class="queryEmployerAction" method="queryEmployer">
+			<result name="success" type="redirectAction">
+				<param name="empId">${id}</param>
+				<param name="actionName">update-emp-preupdateEmployer</param>
+			</result>
+			
+			<result name="error">/WEB-INF/admin/error.jsp</result>
 		</action>
 		
 		<!-- 修改用工单位信息 -->

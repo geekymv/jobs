@@ -21,10 +21,9 @@ public class UpdateEmpAction extends ActionSupport implements RequestAware, Sess
 	@Autowired
 	private EmployerService employerService;
 	
-	private Employer employer;
-	
 	private Integer empId;	//用工单位id
 	
+	private String account;	//用工单位账号
 	private String name;	//用工单位名称
 	private String teacher;	//负责老师
 	private String mobile;	//电话号码
@@ -43,9 +42,9 @@ public class UpdateEmpAction extends ActionSupport implements RequestAware, Sess
 			return ERROR;
 		}
 		
-		employer = employerService.queryEmployer(empId);
+		Employer emp = employerService.queryEmployer(empId);
 		
-		request.put("employer", employer);
+		request.put("emp", emp);
 		
 		return "preupdateEmployer";
 	}
@@ -62,27 +61,28 @@ public class UpdateEmpAction extends ActionSupport implements RequestAware, Sess
 			return ERROR;
 		}
 
-		employer = employerService.queryEmployer(empId);
+		Employer emp = employerService.queryEmployer(empId);
 		
-		employer.setName(name);
-		employer.setTeacher(teacher);
-		employer.setMobile(mobile);
-		employer.setTotalMoney(totalMoney);
-		employer.setPostNum(postNum);
-		employer.setRemarks(remarks.trim());
+		emp.setAccount(account);
+		emp.setName(name);
+		emp.setTeacher(teacher);
+		emp.setMobile(mobile);
+		emp.setTotalMoney(totalMoney);
+		emp.setPostNum(postNum);
+		emp.setRemarks(remarks.trim());
 		
-		employerService.saveEmployer(employer);
-		
-		System.out.println("helloworld");
-		
+		employerService.saveEmployer(emp);
+
 		return "updateEmployer";
 	}
 	/**
 	 * 对输入的用工单位信息验证
 	 */
 	public void validateUpdateEmployer() {
-		employer = employerService.queryEmployer(empId);
-		
+		if(null == account || account.trim().equals("")){
+			this.addFieldError("account", "用工单位账号不能为空！");
+			return;
+		}
 		if(null == name || name.trim().equals("")){
 			this.addFieldError("name", "用工单位名称不能为空！");
 			return;
@@ -118,17 +118,17 @@ public class UpdateEmpAction extends ActionSupport implements RequestAware, Sess
 		this.request = request;
 	}
 	
-	public Employer getEmployer() {
-		return employer;
-	}
-	public void setEmployer(Employer employer) {
-		this.employer = employer;
-	}
 	public Integer getEmpId() {
 		return empId;
 	}
 	public void setEmpId(Integer empId) {
 		this.empId = empId;
+	}
+	public void setAccount(String account) {
+		this.account = account;
+	}
+	public String getAccount() {
+		return account;
 	}
 	public String getName() {
 		return name;
