@@ -137,9 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="form-group">
 				    <label for="remarks" class="col-sm-2 control-label">备注信息</label>
 				    <div class="col-sm-3">
-				     	<textarea class="form-control" rows="4" name="remarks">
-				     		${salary.remarks }
-					    </textarea>
+				     	<textarea class="form-control" rows="4" name="remarks">${salary.remarks }</textarea>
 				    </div>
 				</div>
 			  	 <div class="form-group">

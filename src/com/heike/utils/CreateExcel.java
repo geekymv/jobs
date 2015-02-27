@@ -108,7 +108,7 @@ public class CreateExcel {
 				float rsalary = s.getSalary();	//基本工资
 				float rtoolFee = s.getToolFee();	//工具费
 				float rbonus = s.getBonus();	//奖金
-				float rtotal = rsalary = rtoolFee + rbonus;	//实发工资
+				float rtotal = rsalary + rtoolFee + rbonus;	//实发工资
 				String empName = s.getEmployer().getName();		//用工单位
 				
 				String rremarks = s.getRemarks(); 	//备注

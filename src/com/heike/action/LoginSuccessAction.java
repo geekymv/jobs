@@ -26,23 +26,18 @@ public class LoginSuccessAction extends ActionSupport implements SessionAware{
 	 * @throws Exception
 	 */
 	public String success() throws Exception {
-
 		Object user = session.get("user");
-		
 		if(null == user) {
 			return ERROR;
 		}
 
 		if(user instanceof Student){	//学生
 			Student student = (Student)user;
-			
 			session.put("student", student);
 			return "student";
 			
 		}else if (user instanceof Employer){
-			
 			Employer employer = (Employer)user;
-			
 			session.put("employer", employer);
 			
 			Integer authority = employer.getAuthority();
@@ -51,9 +46,6 @@ public class LoginSuccessAction extends ActionSupport implements SessionAware{
 				return "admin";
 			
 			}else if (ConstantUtils.EMPLOYER == authority){	//学院或社团
-				
-				System.out.println("111");
-				
 				return "employer";
 			}
 		}

@@ -50,21 +50,20 @@ public class DownloadExcelAction extends ActionSupport implements SessionAware {
 			return ERROR;
 		}
 		
-		String[] titles = {"序号", "姓名", "学号", "年级专业", "岗位名称", "工作时间/h", "基本工资", "工具费", "奖金", "实发工资", "所在学院", "备注"};
-
-		SSHDateConverter converter = new SSHDateConverter();
-		String date = converter.convertToString(null, new Date());
-		filename = "学生勤工助学工资表" + date + ".xls";
-		filename = new String(filename.getBytes("gbk"), "iso-8859-1");
+		String[] titles = {"序号", "姓名", "学号", "年级专业", "岗位名称", "工作时间", "基本工资", "工具费", "奖金", "实发工资", "所在学院", "备注"};
 
 		List<Salary> salarys = null;	//数据
 		//判断是管理员下载还是用工单位下
 		if(ConstantUtils.ADMIN == employer.getAuthority()) {	//管理员
 			salarys = salaryService.listAll(month);
+			filename = "学生勤工助学工资表" + month + ".xls";
 			
 		}else if(ConstantUtils.EMPLOYER == employer.getAuthority()){	//用工单位
 			salarys = salaryService.listAll2(month, employer.getId());
+			filename = "学生勤工助学工资表（" + employer.getName() + month + "）.xls";
 		}
+		
+		filename = new String(filename.getBytes("gbk"), "iso-8859-1");
 		
 		List<Recruit> recruits = new ArrayList<Recruit>();
 		for(Salary s : salarys){
